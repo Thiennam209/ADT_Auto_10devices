@@ -26,10 +26,10 @@ az config set extension.use_dynamic_install=yes_without_prompt
 az extension add --name azure-iot -y
 
 # echo 'retrieve files'
-git clone https://github.com/Thiennam209/ARM-Template-WTA.git
+git clone https://github.com/Thiennam209/ADT_Auto_10devices.git
 
 # echo 'input model'
-autoid=$(az dt model create -n $adtname --models ./ARM-Template-WTA/models/auto.json --query [].id -o tsv)
+autoid=$(az dt model create -n $adtname --models ./ADT_Auto_10devices/models/auto.json --query [].id -o tsv)
 
 # echo 'instantiate ADT Instances'
 for i in {1..10}
@@ -47,4 +47,4 @@ az dt route create --dt-name $adtname --endpoint-name "$egname-ep" --route-name 
 az eventgrid event-subscription create --name "$egname-broadcast-sub" --source-resource-id $egid --endpoint "$funcappid/functions/broadcast" --endpoint-type azurefunction
 
 # Retrieve and Upload models to blob storage
-az storage blob upload-batch --account-name $storagename -d $containername -s "./ARM-Template-WTA/assets"
+az storage blob upload-batch --account-name $storagename -d $containername -s "./ADT_Auto_10devices/assets"
