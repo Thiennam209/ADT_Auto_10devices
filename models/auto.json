@@ -1,0 +1,63 @@
+{
+  "@id": "dtmi:digitaltwins:Basic:Auto;1",
+  "@type": "Interface",
+  "@context": ["dtmi:dtdl:context;2"],
+  "displayName": "Auto Car",
+  "description": "Auto Car data",
+  "contents": [
+    {
+      "@type": "Property",
+      "name": "autoid",
+      "displayName": "autoid",
+      "description": "The unique id of the auto",
+      "writable": true,
+      "schema": "string"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "TimeInterval",
+      "description": "The time interval of this data",
+      "schema": "string"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "Car1_Acceleration",
+      "schema": "integer"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "Car1_Velocity",
+      "schema": "integer"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "Car1_BrakeForce",
+      "schema": "integer"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "Car2_Acceleration",
+      "schema": "integer"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "Car2_Velocity",
+      "schema": "integer"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "Car2_BrakeForce",
+      "schema": "integer"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "DistanceBetweenCars",
+      "schema": "integer"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "isCrash",
+      "schema": "boolean"
+    }
+  ]
+}
